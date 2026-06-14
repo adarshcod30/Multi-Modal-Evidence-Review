@@ -41,7 +41,7 @@ You must also build an evaluation pipeline using the labeled examples in `datase
 | `dataset/sample.csv`                | Labeled examples with inputs and expected outputs.             |
 | `dataset/test.csv`                  | Input-only rows for final prediction.                          |
 | `dataset/user_history.csv`          | Historical claim counts and risk patterns for each user.       |
-| `dataset/evidence_requirements.csv` | Rules for evidence quality, issue types, and review standards. |
+| `dataset/evidence_requirements.csv` | Minimum image evidence checklist by object and issue family.    |
 | `dataset/images/sample/`            | Images referenced by `sample.csv`.                             |
 | `dataset/images/test/`              | Images referenced by `test.csv`.                               |
 
@@ -53,6 +53,15 @@ images/test/case_001/img_1.jpg;images/test/case_001/img_2.jpg
 ```
 
 The image ID is the filename without extension, such as `img_1`.
+
+`evidence_requirements.csv` contains four columns:
+
+| Column | Meaning |
+|---|---|
+| `requirement_id` | Identifier for the evidence rule. |
+| `claim_object` | Object category the rule applies to: `car`, `laptop`, `package`, or `all`. |
+| `applies_to` | Human-readable issue family, such as `dent or scratch` or `vehicle identity or orientation`. |
+| `minimum_image_evidence` | Minimum visual evidence needed to evaluate that kind of claim. |
 
 ---
 
@@ -161,6 +170,8 @@ Examples:
 ### Evidence Standard
 
 `evidence_standard_met=true` means the image set is sufficient to evaluate the claim. It does not mean the claim is supported.
+
+Use `dataset/evidence_requirements.csv` as a minimum-evidence checklist. It tells you what must be visible for broad claim types, but your system must still decide the final status from the images and claim.
 
 Example:
 
