@@ -76,7 +76,6 @@ Required output fields:
 
 Hard requirements:
 
-- Must be **terminal-based**.
 - Must read the provided CSV files and local images.
 - Must produce `output.csv` with the exact schema in `problem_statement.md`.
 - Must include an evaluation workflow
