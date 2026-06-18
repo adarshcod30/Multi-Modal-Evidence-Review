@@ -1,4 +1,4 @@
-# Visual Evidence Verification Challenge
+# Multi-Modal Evidence Review
 
 Build a system that verifies damage claims using images, a short claim conversation, user history, and minimum evidence requirements.
 
