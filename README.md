@@ -130,7 +130,9 @@ This repo ships with an `AGENTS.md` that modern AI coding tools may read. It ins
 | macOS / Linux | `$HOME/hackerrank_orchestrate/log.txt` |
 | Windows | `%USERPROFILE%\hackerrank_orchestrate\log.txt` |
 
-You will upload this log as your chat transcript at submission time.
+You will upload this log as your chat transcript at submission time. The chat transcript means your conversation with the AI coding tool you used to build the system. It is not the runtime logs, reasoning trace, or conversation history produced by the claim-verification agent you are building.
+
+If you use multiple AI tools, include the relevant conversation logs from all of them in the same transcript file. Separate each tool's section with a clear divider and label it with the tool name.
 
 Never paste secrets into the chat. If secrets are needed, use environment variables.
 
