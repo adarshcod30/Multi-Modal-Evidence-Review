@@ -1,0 +1,46 @@
+======================================================================
+EVALUATION RESULTS
+======================================================================
+
+Per-Field Accuracy:
+----------------------------------------
+  claim_status                  : 15/20 = 75.0%
+  evidence_standard_met         : 17/20 = 85.0%
+  risk_flags                    : 3/20 = 15.0%
+  issue_type                    : 11/20 = 55.0%
+  object_part                   : 17/20 = 85.0%
+  severity                      : 9/20 = 45.0%
+  valid_image                   : 14/20 = 70.0%
+  supporting_image_ids          : 17/20 = 85.0%
+
+Overall claim_status accuracy: 75.0%
+
+Per-Class Precision / Recall / F1 for claim_status:
+------------------------------------------------------------
+  supported                     : P=0.800  R=1.000  F1=0.889
+  contradicted                  : P=0.500  R=0.200  F1=0.286
+  not_enough_information        : P=0.667  R=0.667  F1=0.667
+
+Confusion Matrix (rows=expected, cols=predicted):
+------------------------------------------------------------
+                                    supported   contradictednot_enough_information
+supported                                  12              0              0
+contradicted                                3              1              1
+not_enough_information                      0              1              2
+
+Claim Status Disagreements:
+------------------------------------------------------------
+  Case 2: predicted=contradicted, expected=not_enough_information
+    Justification: The claim specifies a scratch, but img_1 shows severe structural damage and a missing fog light housing, which constitut
+  Case 5: predicted=supported, expected=contradicted
+    Justification: Image img_1 clearly shows a dent on the rear bumper, confirming the damage described in the claim.
+  Case 14: predicted=supported, expected=contradicted
+    Justification: Image img_1 confirms the presence of a scratch on the laptop trackpad as described by the user.
+  Case 19: predicted=not_enough_information, expected=contradicted
+    Justification: Image img_1 shows the contents of the package (a food can) rather than the shipping box, making it impossible to assess 
+  Case 20: predicted=supported, expected=contradicted
+    Justification: Image img_1 clearly shows the package seal is torn, supporting the claim despite the contradictory nature of img_2.
+
+Total API calls: ~69
+Runtime: 222.7s (3.7 min)
+======================================================================

@@ -1,2 +1,3 @@
-google-genai>=1.0.0
-python-dotenv>=1.0.0
+# Runtime dependencies. Two, both pinned to a known-good floor.
+google-genai>=1.0.0,<2.0.0
+python-dotenv>=1.0.0,<2.0.0
