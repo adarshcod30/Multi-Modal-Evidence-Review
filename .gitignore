@@ -15,10 +15,3 @@ code.zip
 
 # Note: code/evaluation/eval_results.txt IS tracked on purpose - it is the
 # measured evidence behind the numbers quoted in the README.
-
-# local agent and editor files, never committed
-.claude/
-.claude.json
-CLAUDE.local.md
-CLAUDE.md
-AGENTS.md
