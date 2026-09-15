@@ -15,3 +15,7 @@ code.zip
 
 # Note: code/evaluation/eval_results.txt IS tracked on purpose - it is the
 # measured evidence behind the numbers quoted in the README.
+
+# secrets, build output and local noise
+*.log
+.pytest_cache/
